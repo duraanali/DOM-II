@@ -8,6 +8,14 @@ function moveBlue() {
 let blue = document.querySelector(".block--blue");
 blue.addEventListener("click", moveBlue);
 
+function moveRightBlue(event) {
+  TweenMax.to(".block--blue", 2, { x: 2000, delay: 2 });
+
+  event.stopPropagation();
+}
+
+blue.addEventListener("click", moveRightBlue);
+
 //----------------Red
 function moveRed() {
   const mainDiv2 = document.querySelector(".blocks");
@@ -16,6 +24,14 @@ function moveRed() {
 }
 let red = document.querySelector(".block--red");
 red.addEventListener("click", moveRed);
+
+function moveRightRed(event) {
+  TweenMax.to(".block--red", 2, { x: 2000, delay: 2 });
+
+  event.stopPropagation();
+}
+
+red.addEventListener("click", moveRightRed);
 
 //----------------Green
 function moveGreen() {
@@ -26,23 +42,40 @@ function moveGreen() {
 let green = document.querySelector(".block--green");
 green.addEventListener("click", moveGreen);
 
+function moveRightGreen(event) {
+  TweenMax.to(".block--green", 2, { x: 2000, delay: 2 });
+
+  event.stopPropagation();
+}
+
+green.addEventListener("click", moveRightGreen);
+
 //--------------Pink
 
-function movePink() {
+//-------Animate
+let pink = document.querySelector(".block--pink");
+
+function moveRightPink(event) {
+  TweenMax.to(".block--pink", 2, { x: 2000, delay: 2 });
+
+  event.stopPropagation();
+}
+
+pink.addEventListener("click", moveRightPink);
+
+//-----------move up-------
+function movePink(event) {
   const mainDiv4 = document.querySelector(".blocks");
   mainDiv4.prepend(document.querySelector(".block--pink"));
   mainDiv4.prepend(document.querySelector(".block--pink"));
+  event.stopPropagation();
+
+  return false;
 }
-let pink = document.querySelector(".block--pink");
+
 pink.addEventListener("click", movePink);
 
-function mouseDown() {
-  console.log("Im moving guys");
-}
-
-pink.addEventListener("mousedown", mouseDown);
-
-//---------------Grey
+//---------------Gray
 
 function moveGray() {
   const mainDiv5 = document.querySelector(".blocks");
@@ -51,3 +84,11 @@ function moveGray() {
 }
 let gray = document.querySelector(".block--gray");
 gray.addEventListener("click", moveGray);
+
+function moveRightGray(event) {
+  TweenMax.to(".block--gray", 2, { x: 2000, delay: 2 });
+
+  event.stopPropagation();
+}
+
+gray.addEventListener("click", moveRightGray);
